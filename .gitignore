@@ -3,3 +3,5 @@
 /.gradle/
 /lib/build/
 /server/build/
+/server/out/
+/lib/out/

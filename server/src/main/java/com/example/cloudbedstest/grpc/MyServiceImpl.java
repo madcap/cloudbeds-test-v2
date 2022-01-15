@@ -1,4 +1,4 @@
-package com.example.cloudbedstest.service;
+package com.example.cloudbedstest.grpc;
 
 import io.grpc.stub.StreamObserver;
 import net.devh.boot.grpc.examples.lib.HelloReply;
