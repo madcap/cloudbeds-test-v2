@@ -21,16 +21,19 @@ Code Coverage Report: `build/reports/jacoco/test/html/index.html`
 ## Work To Do
 
 * [ ] 3 subproject gradle structure
-    * [X] lib (proto)
+    * [X] lib (proto/avro?)
     * [X] server
     * [ ] client
-* [X] working grpc example server
+* [X] working grpc example server (protobuf not avro)
+    * [ ] delete example code 
 * [X] define data models/entities/repo
 * [X] create rest interface:
     * [X] create users
     * [X] get users by country
 * [ ] real grcp service:
+    * [ ] using avro
     * [ ] get user info
 * [ ] client behavior ???
 * [ ] unit tests for server classes
+* [ ] final cleanup
 
