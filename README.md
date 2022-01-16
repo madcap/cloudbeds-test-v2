@@ -12,6 +12,10 @@ Verify server is running:
 
 Code Coverage Report: `build/reports/jacoco/test/html/index.html`
 
+## Usage Notes
+
+* Backing database is in-memory only and non-permanent. At server stop the data will be lost.
+* Database UI available at `http://localhost:8080/h2-console` with password `password`
 
 
 ## Work To Do
@@ -21,7 +25,7 @@ Code Coverage Report: `build/reports/jacoco/test/html/index.html`
     * [X] server
     * [ ] client
 * [X] working grpc example server
-* [ ] define data models/entities/repo
+* [X] define data models/entities/repo
 * [ ] create rest interface:
     * [ ] create users
     * [ ] get users by country
