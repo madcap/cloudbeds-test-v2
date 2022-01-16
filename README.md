@@ -26,11 +26,11 @@ Code Coverage Report: `build/reports/jacoco/test/html/index.html`
     * [ ] client
 * [X] working grpc example server
 * [X] define data models/entities/repo
-* [ ] create rest interface:
-    * [ ] create users
-    * [ ] get users by country
+* [X] create rest interface:
+    * [X] create users
+    * [X] get users by country
 * [ ] real grcp service:
     * [ ] get user info
-* [ ] client behavior TBD
+* [ ] client behavior ???
 * [ ] unit tests for server classes
 
