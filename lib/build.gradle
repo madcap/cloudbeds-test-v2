@@ -1,4 +1,6 @@
 
+import com.github.davidmc24.gradle.plugin.avro.GenerateAvroJavaTask
+
 buildscript {
     ext {
         protobufVersion = '3.19.3'
@@ -10,6 +12,9 @@ buildscript {
 plugins {
     id 'java-library'
     id 'com.google.protobuf' version "${protobufPluginVersion}"
+    // https://github.com/davidmc24/gradle-avro-plugin/blob/master/examples/avsc-from-subproject/cat/build.gradle
+    // automatically detects avsc files in src/main
+    id "com.github.davidmc24.gradle.plugin.avro-base" version "1.3.0"
 }
 
 repositories {
@@ -19,7 +24,9 @@ repositories {
 dependencies {
     implementation "io.grpc:grpc-protobuf:${grpcVersion}"
     implementation "io.grpc:grpc-stub:${grpcVersion}"
-    // TODO JM - whhy is this here?
+    implementation "org.apache.avro:avro:1.11.0"
+
+    // required for generated grcp class annotations
     compileOnly 'jakarta.annotation:jakarta.annotation-api:1.3.5'
 }
 
@@ -43,4 +50,11 @@ protobuf {
     }
 }
 
+def generateAvro = tasks.register("generateAvro", GenerateAvroJavaTask) {
+    source("$projectDir/src/main/avro")
+    outputDir = file("$projectDir/src/generated/main/avro")
+}
 
+tasks.named("compileJava").configure {
+    source(generateAvro)
+}
