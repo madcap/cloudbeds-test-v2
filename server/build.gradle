@@ -19,6 +19,9 @@ dependencies {
 	implementation project(':lib')
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation "org.apache.avro:avro:1.11.0"
+	implementation "org.apache.avro:avro-ipc:1.11.0"
+
 	runtimeOnly 'com.h2database:h2'
 
 	testImplementation 'org.codehaus.groovy:groovy'
