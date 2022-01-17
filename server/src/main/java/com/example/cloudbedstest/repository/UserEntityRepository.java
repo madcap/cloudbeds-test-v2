@@ -14,4 +14,5 @@ public interface UserEntityRepository extends JpaRepository<UserEntity, BigInteg
 	@Query("from UserEntity user left join fetch user.address address where address.country = ?1")
 	Set<UserEntity> findByCountry(String country);
 
+	Set<UserEntity> findByFirstName(String firstName);
 }

@@ -131,7 +131,7 @@ public class UserEntity {
 			", lastName='" + lastName + '\'' +
 			", email='" + email + '\'' +
 			", password='" + password + '\'' +
-			", address=" + address.getAddressId() +
+			", address=" + (address == null ? null : address.getAddressId()) +
 			'}';
 	}
 }
