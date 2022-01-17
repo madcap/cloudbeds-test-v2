@@ -11,6 +11,6 @@ class HomeControllerSpec extends Specification {
         def result = controller.getHome()
 
         then:
-        result == 'Cloudbeds Test V2 is running successfully.'
+        result == 'Cloudbeds Test App is running successfully.'
     }
 }

@@ -1,5 +1,17 @@
 # Cloudbeds Test v2
 
+## Summary
+
+Take home test for Cloudbeds:
+* protobuf and avro rpc definitions for user service compiled by gradle
+* grpc server exposing service to find users by first name, encoded using protobuf
+* rest api server exposing endpoints to create user and find users by country
+* unit/integration tests found under server/src/test/groovy/com/example/cloudbedstest
+
+Missed requirements:
+* client - using curl and grpcurl instead given time constraints
+* avro encoded grpc - insufficient examples available online
+
 ## Server Setup
 
 Build and run locally:
@@ -52,7 +64,7 @@ curl --location --request GET 'http://localhost:8080/user/country/{country}'
 * there is one service with one method implemented: `UserService/GetUsersByFirstName`
 * implemented using protobuf not avro
 
-Examples
+Example usage (requires grpcurl)
 ```
 grpcurl --plaintext localhost:9090 list
 grpcurl --plaintext localhost:9090 list com.cloudbeds.user.UserService
@@ -62,17 +74,17 @@ grpcurl --plaintext -d '{"firstName": "James"}' localhost:9090 com.cloudbeds.use
 ## Work To Do
 
 * [ ] 3 subproject gradle structure
-    * [X] lib (proto/avro?)
+    * [X] lib (protobuf/avro?)
     * [X] server
     * [ ] client
 * [X] working grpc example server (protobuf not avro) 
 * [X] define data models/entities/repo
-* [X] create rest interface:
+* [X] rest api:
     * [X] create users
     * [X] get users by country
-* [ ] real grcp service:
+* [ ] grcp service:
     * [ ] using avro instead of protobuf
     * [X] "retrieve user info"
-* [ ] client behavior ???
-* [ ] final cleanup
+* [ ] client code (behavior TBD)
+* [X] final cleanup
 

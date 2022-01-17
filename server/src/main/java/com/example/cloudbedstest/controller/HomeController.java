@@ -8,6 +8,6 @@ public class HomeController {
 
 	@GetMapping("/")
 	public String getHome() {
-		return "Cloudbeds Test V2 is running successfully.";
+		return "Cloudbeds Test App is running successfully.";
 	}
 }

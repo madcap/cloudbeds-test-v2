@@ -86,7 +86,7 @@ class UserEntityRepositoryIntegrationSpec extends Specification {
         def results = repository.findByFirstName('foo')
 
         then:
-        println results
+        //println results
         results.size() == 2
     }
 }
